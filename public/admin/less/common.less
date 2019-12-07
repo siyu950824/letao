@@ -6,6 +6,7 @@
   padding: 0;
   list-style: none;
 }
+
 a:hover{
   text-decoration: none;
 }
@@ -26,6 +27,14 @@ html,body{
   width: 180px;
   height: 100%;
   background-color: #222D32;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: 0.5s;
+  z-index: 9999;
+  &.now{
+    left: -180px; 
+  }
   .title{
     display: block;
     width: 100%;
@@ -63,10 +72,67 @@ html,body{
      
     }
   a.now{
+      background-color: #1D1F21;
       border-left: 3px solid #367FA9;
   }
-  .second{
-    margin-left: 15px;
+  .second a{
+    padding-left: 65px;
   }
   }
 }
+.content{
+  width: 100%;
+  padding-left:180px; 
+  transition: 0.5s;
+  &.now{
+    padding-left:0px; 
+  }
+  
+  .cont-head{
+    height: 50px;
+    width: 100%;
+    background-color: #3C8DBC;
+    display: flex;
+    position:fixed;
+    justify-content: space-between;
+    padding-left: 180px;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+    &.now{
+      padding-left: 0px;
+    }
+    a{
+      display: block;
+      width: 50px;
+      height: 50px;
+      text-align: center;
+      color: #fff;
+      font-size: 16px;
+      line-height: 50px;
+    }
+  }
+  .topBar{
+    padding: 50px 14px;
+  }
+  .breadcrumb{
+       height: 36px;
+       margin: 20px 15px;
+       padding: 8px ;
+       a{
+         display: inline-block;
+       }
+  }
+  .charts01,
+  .charts02 {
+    width: 45%;
+    height: 500px;
+   
+  }
+  thead th,
+  tbody td{
+    text-align: center
+  }
+  
+}
+

@@ -44,21 +44,21 @@ $(function () {
     $form.data('bootstrapValidator').resetForm(true)
   })
   $('.btn-login').on('click', function () {
-    // e.preventDefault()
-    //  $.ajax({
-    //   url:'/employee/employeeLogin',
-    //   type:'post',
-    //   data:$form.serialize(),
-    //   success:function(info){
-    //        if(info.success){
-    //          location.href='index.html'
-    //        }else if(info.error===1000){
-    //          alert('用户名错误')
-    //        }else{
-    //          alert('密码错误')
-    //        }
-    //   },
-    //  })
+  //   e.preventDefault()
+  //    $.ajax({
+  //     url:'/employee/employeeLogin',
+  //     type:'post',
+  //     data:$form.serialize(),
+  //     success:function(info){
+  //          if(info.success){
+  //            location.href='index.html'
+  //          }else if(info.error===1000){
+  //            alert('用户名错误')
+  //          }else{
+  //            alert('密码错误')
+  //          }
+  //     },
+  //    })
   })
   $form.on('success.form.bv', function (e) {
     e.preventDefault()

@@ -23,8 +23,8 @@
     <!-- 导航 -->
     <div class="nav">
       <ul>
-        <li><a href="user.html"> <span class="glyphicon glyphicon-user"></span> <span>用户管理</span></a></li>
-        <li><a href="Javascript:;" class="category" > <span class="glyphicon glyphicon-list"></span> <span>分类管理</span></a>
+        <li><a href="user.html" class="now"> <span class="glyphicon glyphicon-user"></span> <span>用户管理</span></a></li>
+        <li><a href="Javascript:;" class="category"> <span class="glyphicon glyphicon-list"></span> <span>分类管理</span></a>
           <ul class="second" style="display:none;">
             <li><a href="frist.html">一级分类</a></li>
             <li><a href="second.html">二级分类</a></li>
@@ -46,13 +46,20 @@
         <li><a href="index.html">管理系统</a></li>
         <li>首页</li>
       </ol>
-    
-    <div class="pull-left charts01"></div>
-    <div class="pull-right charts02"></div>
+      <table class="table table-bordered ">
+        <thead>
+          <th>序号</th>
+          <th>手机号</th>
+          <th>用户名</th>
+          <th>转态</th>
+          <th>操作</th>
+        </thead>
+        <tbody>
+        </tbody>
+      </table>
+     <div class="pull-right"> <ul id="page"></ul></div>
+    </div>
   </div>
-</div>
- 
-
   <div class="modal fade outModal ">
     <div class="modal-dialog modal-sm">
       <div class="modal-content">
@@ -67,15 +74,51 @@
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
           <button type="button" class="btn btn-primary btn-out">确定</button>
         </div>
-      </div><!-- /.modal-content -->
-    </div><!-- /.modal-dialog -->
-  </div><!-- /.modal -->
+      </div>
+    </div>
+  </div>
+  <div class="modal fade userModal ">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title">温馨提示</h4>
+        </div>
+        <div class="modal-body">
+          <p><span class="glyphicon glyphicon-info-sign"></span> 你确定要执行该命令吗</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+          <button type="button" class="btn btn-primary btn-change">确定</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="text/html" id="tpl">
+    {{each rows v i }}
+    <tr>
+      <td>{{ (page-1)*size+i+1}}</td>
+      <td>{{v.username}}</td>
+      <td>{{v.mobile}}</td>
+      <td>{{v.isDelete === 1 ? '正常':'禁用'}}</td>
+      <td>
+          {{if v.isDelete === 0}}
+        <button class="btn btn-success" data-id="{{v.id}}">启用</button>
+        {{else}}
+        <button class="btn btn-danger" data-id="{{v.id}}">禁用</button>
+        {{/if}}
+      </td>
+    </tr>
+  {{/each}}
+  </script>
   <script src="./lib/jquery/jquery.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
-  <script src="./lib/echarts/echarts.min.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
   <script src="./js/common.js"></script>
-  <script src="./js/index.js"></script>
+  <script src="./js/user.js"> </script>
 </body>
 
 </html>
