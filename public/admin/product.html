@@ -46,6 +46,23 @@
         <li><a href="index.html">管理系统</a></li>
         <li>首页</li>
       </ol>
+      <button class="btn btn-default btn-add mb-20">添加分类</button>
+      <table class="table table-bordered">
+        <thead>
+          <th>序号</th>
+          <th>商品名称</th>
+          <th>商品描述</th>
+          <th>商品库存</th>
+          <th>商品尺寸</th>
+          <th>商品状态</th>
+        </thead>
+        <tbody>
+         
+        </tbody>
+      </table>
+      <div class="pull-right">
+        <ul id="page"></ul>
+      </div>
     </div>
   </div>
   <div class="modal fade outModal ">
@@ -65,10 +82,24 @@
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
+  <script type="text/html" id="tpl">
+    {{each rows v i}}
+    <tr>
+        <td>序号</td>
+      <td>商品名称</td>
+      <td>商品描述</td>
+      <td>商品库存</td>
+      <td>商品尺寸</td>
+      <td>商品状态</td>
+     </tr>
+    {{/each}}
+  </script>
   <script src="./lib/jquery/jquery.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
   <script src="./js/common.js"></script>
+  <script src="./js/product.js"></script>
 </body>
 
 </html>

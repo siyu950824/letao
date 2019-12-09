@@ -109,6 +109,9 @@ body {
 .content .topBar {
   padding: 50px 14px;
 }
+.content .topBar .mb-20 {
+  margin-bottom: 20px;
+}
 .content .breadcrumb {
   height: 36px;
   margin: 20px 15px;
@@ -125,4 +128,7 @@ body {
 .content thead th,
 .content tbody td {
   text-align: center;
+}
+.mb-20 {
+  margin-bottom: 10px;
 }

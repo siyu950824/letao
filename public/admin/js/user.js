@@ -1,6 +1,6 @@
 $(function(){
-  var page=1
-  var pageSize=5
+  var page=1;
+  var pageSize=5;
   function render(){
     $.ajax({
       type:'get',
