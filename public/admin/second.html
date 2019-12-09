@@ -8,6 +8,7 @@
   <title>乐淘商城</title>
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="./css/common.css">
 </head>
 
@@ -89,30 +90,38 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
           <h4 class="modal-title">添加分类</h4>
         </div>
+        <form>
         <div class="modal-body">
           <div class="form-group">
+            <input type="text" name="categoryId" class="hidden">
             <div class="dropdown">
               <button class="btn btn-default mb-20 dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="true">
-                请选择一级分类
+               <span class="text">请选择一级分类</span>
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                 <!-- 坑 -->
               </ul>
             </div>
-            <input type="text" class="form-control" name="categoryName" placeholder="请输入一级分类名称">
+          </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="brandName" placeholder="请输入二级分类名称">
+              </div>
+          <div class="form-group">
+            <label for="file" class="btn btn-default">上传图片</label>
+            <input type="file" multiple id="file" name="pic1" data-url="/category/addSecondCategoryPic" class="hidden" >
           </div>
           <div class="form-group">
-              <input type="file" class="mb-20">
-            <img src="images/none.png"  width="100">
-            
-          </div>
+              <input type="text" name="brandLogo" class="hidden">
+              <img src="images/none.png" class="brandLogo" width="100"  height="100" alt="">
+            </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-          <button type="button" class="btn btn-primary">确定</button>
+          <button type="sumbit" class="btn btn-primary">确定</button>
         </div>
+      </form>
       </div><!-- /.modal-content -->
     </div><!-- /.modal-dialog -->
   </div><!-- /.modal -->
@@ -123,7 +132,7 @@
     <td>{{ v.categoryName }}</td>
     <td>{{ v.brandName }}</td>
     <td>
-      <img src="{{ v.brandLogo ? v.brandLogo : 'images/none.png' }}" height="50" alt="">
+        <img width="50" height="50" src="{{v.brandLogo}}" alt="">
     </td>
   </tr>
   {{/each}}
@@ -139,6 +148,9 @@
   <script src="./lib/nprogress/nprogress.js"></script>
   <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
+  <script src="./lib/bootstrap-validator/js/bootstrapValidator.js"></script>
+  <script src="./lib/jquery-fileupload/jquery.ui.widget.js"></script>
+  <script src="./lib/jquery-fileupload/jquery.fileupload.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/second.js"></script>
 </body>
