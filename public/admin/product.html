@@ -6,7 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>乐淘商城</title>
+
   <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+  <link rel="stylesheet" href="./lib/bootstrap-validator/css/bootstrapValidator.css">
   <link rel="stylesheet" href="./lib/nprogress/nprogress.css">
   <link rel="stylesheet" href="./css/common.css">
 </head>
@@ -24,7 +26,7 @@
     <div class="nav">
       <ul>
         <li><a href="user.html"> <span class="glyphicon glyphicon-user"></span> <span>用户管理</span></a></li>
-        <li><a href="Javascript:;" class="category" > <span class="glyphicon glyphicon-list"></span> <span>分类管理</span></a>
+        <li><a href="Javascript:;" class="category"> <span class="glyphicon glyphicon-list"></span> <span>分类管理</span></a>
           <ul class="second" style="display:none;">
             <li><a href="frist.html">一级分类</a></li>
             <li><a href="second.html">二级分类</a></li>
@@ -55,9 +57,10 @@
           <th>商品库存</th>
           <th>商品尺寸</th>
           <th>商品状态</th>
+          <th>操作</th>
         </thead>
         <tbody>
-         
+
         </tbody>
       </table>
       <div class="pull-right">
@@ -85,19 +88,27 @@
   <script type="text/html" id="tpl">
     {{each rows v i}}
     <tr>
-        <td>序号</td>
-      <td>商品名称</td>
-      <td>商品描述</td>
-      <td>商品库存</td>
-      <td>商品尺寸</td>
-      <td>商品状态</td>
+        <td>{{(page-1)*size + (i+1) }}</td>
+      <td>{{v.proName}}</td>
+      <td>{{v.proDesc}}</td>
+      <td>{{v.num}}</td>
+      <td>{{v.size}}</td>
+      <td>{{v.brandId=== 2 ?'下架':'上架'}}</td>
+      <td>
+      {{ if v.statu === 1 }}
+      <button class="btn btn-danger">下架</button>
+    {{ else }}
+      <button class="btn btn-success">上架</button>
+    {{ /if }}
+    </td>
      </tr>
     {{/each}}
   </script>
   <script src="./lib/jquery/jquery.js"></script>
   <script src="./lib/bootstrap/js/bootstrap.js"></script>
-  <script src="./lib/artTemplate/template-web.js"></script>
   <script src="./lib/nprogress/nprogress.js"></script>
+  <script src="./lib/artTemplate/template-web.js"></script>
+  <script src="./lib/bootstrap-paginator/bootstrap-paginator.js"></script>
   <script src="./js/common.js"></script>
   <script src="./js/product.js"></script>
 </body>
