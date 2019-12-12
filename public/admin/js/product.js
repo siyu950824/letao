@@ -1,6 +1,6 @@
 $(function(){
-  var page=1;
-  var pageSize=2;
+  var page=1
+  var pageSize=2
   var arr=[]
   function render(){
     $.ajax({

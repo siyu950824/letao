@@ -1,0 +1,33 @@
+.nav {
+  padding: 10px;
+  background-color: #fff;
+}
+.nav ul {
+  overflow: hidden;
+}
+.nav ul li {
+  width: 33.33%;
+  float: left;
+}
+.products {
+  padding: 10px;
+  overflow: hidden;
+}
+.products .product {
+  border: 1px solid #cccccc;
+  padding: 10px;
+  float: left;
+  width: 48%;
+  margin-top: 15px;
+  text-align: center;
+}
+.products .product:nth-child(2n+1) {
+  margin-right: 4%;
+}
+.products .product:nth-child(2n+1) div span:nth-child(1) {
+  color: red;
+}
+.products .product:nth-child(2n+1):nth-child(2) {
+  text-decoration: line-through;
+  color: #6666;
+}
