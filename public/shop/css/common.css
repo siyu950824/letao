@@ -76,3 +76,44 @@ body {
   height: 100%;
   position: relative;
 }
+.search {
+  padding: 10px;
+  position: relative;
+}
+.search input {
+  height: 33px;
+  font-size: 12px;
+  border: 1px solid #007AFF;
+  border-radius: 5px;
+}
+.search button {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  border-radius: 0px 5px  5px 0px ;
+}
+.products {
+  padding: 10px;
+  overflow: hidden;
+  background-color: #fff;
+}
+.products .product {
+  border: 1px solid #ccc;
+  padding: 10px;
+  float: left;
+  width: 48%;
+  margin-top: 15px;
+  text-align: center;
+}
+.products .product .price span:first-child {
+  color: red;
+  font-size: 14px;
+}
+.products .product .price span:last-child {
+  color: #666;
+  text-decoration: line-through;
+  font-size: 12px;
+}
+.products .product:nth-child(2n+1) {
+  margin-right: 2%;
+}

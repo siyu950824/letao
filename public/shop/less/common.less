@@ -78,3 +78,47 @@ body {
   height: 100%;
   position: relative;
 }
+.search{
+  padding: 10px;
+  position: relative;
+  input{
+    height: 33px;
+    font-size: 12px;
+    border: 1px solid #007AFF;
+    border-radius: 5px;
+  }
+  button{
+    position: absolute;
+    right: 10px;
+    top:10px;
+    border-radius: 0px 5px  5px 0px ;
+  }
+}
+.products {
+  padding: 10px;
+  overflow: hidden;
+  background-color: #fff;
+  .product {
+    border: 1px solid #ccc;
+    padding: 10px;
+    float: left;
+    width: 48%;
+    margin-top: 15px;
+    text-align: center;
+
+    .price {
+      span:first-child {
+        color: red;
+        font-size: 14px;
+      }
+      span:last-child {
+        color: #666;
+        text-decoration: line-through;
+        font-size: 12px;
+      }
+    }
+    &:nth-child(2n+1) {
+      margin-right: 2%;
+    }
+  }
+}

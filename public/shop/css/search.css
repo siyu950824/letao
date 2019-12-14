@@ -1,19 +1,48 @@
 .lt-content {
   background-color: #fff;
 }
-.search {
+.lt-content .search {
   padding: 10px;
   position: relative;
 }
-.search input {
+.lt-content .search input {
   height: 33px;
   font-size: 12px;
   border: 1px solid #007AFF;
   border-radius: 5px;
 }
-.search button {
+.lt-content .search button {
   position: absolute;
   right: 10px;
   top: 10px;
   border-radius: 0px 5px  5px 0px ;
+}
+.lt-content .history {
+  padding: 10px;
+}
+.lt-content .history .title {
+  height: 30px;
+  line-height: 30px;
+  overflow: hidden;
+  font-size: 14px;
+  color: #666;
+}
+.lt-content .history .content ul {
+  border: 1px dashed red;
+}
+.lt-content .history .content ul li {
+  height: 30px;
+  line-height: 30px;
+  padding: 0 10px;
+  border-bottom: 1px dashed red;
+}
+.lt-content .history .content ul li:last-child {
+  border-bottom: none;
+}
+.lt-content .history .content ul li span {
+  height: 30px;
+  line-height: 30px;
+}
+.lt-content .history .content ul li a {
+  font-size: 12px;
 }

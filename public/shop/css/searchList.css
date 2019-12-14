@@ -1,0 +1,17 @@
+.lt-content {
+  background-color: #fff;
+}
+.lt-content .sort ul {
+  display: flex;
+  background-color: #cccccc;
+}
+.lt-content .sort ul li {
+  flex: 1;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  font-size: 12px;
+}
+.lt-content .sort ul li.now {
+  color: orange;
+}

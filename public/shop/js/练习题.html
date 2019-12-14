@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //第一题：
+      var c = 1
+      function c(c) {
+        console.log(c)
+        var c = 3
+      }
+      c(2)
+      // 错误
+      // 第二题：
+      ;(function() {
+        var a = (b = 5)
+      })()
+
+      console.log(b)
+      // 5
+      // 第三题
+      var fullname = "John Doe"
+      var obj = {
+        fullname: "Colin Ihrig",
+        prop: {
+          fullname: "Aurelio De Rosa",
+          getFullname: function() {
+            return this.fullname
+          }
+        }
+      }
+
+      console.log(obj.prop.getFullname()) //"Aurelio De Rosa"
+      var test = obj.prop.getFullname
+      console.log(test()) //"John Doe"
+
+      // 第四题：
+      var fun = function() {}
+
+      fun.prototype = {
+        info: {
+          name: "peter",
+          age: 25
+        }
+      }
+
+      var a = new fun()
+      var b = new fun()
+
+      a.info.name = "jack"
+      b.info.name = "tom"
+
+      console.log(a.info.name) //tom
+      console.log(b.info.name) //tom
+
+      // 第五题：
+      var fun = function() {
+        this.info = {
+          name: "peter",
+          age: 25
+        }
+      }
+
+      var a = new fun()
+      var b = new fun()
+
+      a.info.name = "jack"
+      b.info.name = "tom"
+
+      console.log(a.info.name) //jack
+      console.log(b.info.name) //tom
+
+      // 第六题：
+      var fun = function() {
+        this.info = {
+          name: "peter",
+          age: 25
+        }
+      }
+      fun.prototype = {
+        info: {
+          name: "peter",
+          age: 25
+        }
+      }
+
+      var a = new fun()
+      var b = new fun()
+
+      a.info.name = "jack"
+      b.info.name = "tom"
+      console.log(a.info.name) //jack
+      console.log(b.info.name) //tom
+
+      // 第七题：
+      function buildList(list) {
+        var result = []
+        for (var i = 0; i < list.length; i++) {
+          var item = "item" + list[i]
+          result.push(function() {
+            console.log(item + " " + list[i])
+          })
+        }
+        return result
+      }
+      var fnlist = buildList([1, 2, 3])
+      for (var j = 0; j < fnlist.length; j++) {
+        fnlist[j]()
+      }
+
+      // 第八题
+      function buildList(list) {
+        var result = []
+        for (var i = 0; i < list.length; i++) {
+          var item = "item" + list[i]
+          result.push(
+            (function(i) {
+              console.log(item + " " + list[i])
+            })(i)
+          )
+        }
+        return result
+      }
+      var fnlist = buildList([1, 2, 3])
+      //   item1 1
+      //   item2 2
+      //   item3 3
+      // 写出让一个不知道宽高的div水平居中的N种方式？
+      // <div class="parent">
+      //     <div class="child"></div>
+      // </div>
+      // 定位   弹性布局
+    </script>
+  </body>
+</html>
